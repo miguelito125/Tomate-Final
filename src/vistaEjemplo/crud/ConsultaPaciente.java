@@ -1,19 +1,16 @@
-package crud;
+package vistaEjemplo.crud;
 
-import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.GroupLayout;
-import javax.swing.JButton;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.border.LineBorder;
 
 import net.miginfocom.swing.MigLayout;
-import javax.swing.JComboBox;
 
 public class ConsultaPaciente extends JPanel {
 	private JTextField textField;

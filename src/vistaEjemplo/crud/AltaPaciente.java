@@ -1,22 +1,17 @@
-package crud;
-import javax.swing.JPanel;
+package vistaEjemplo.crud;
+import java.awt.Color;
+import java.awt.Font;
 
-import consultas.CierreOperacion;
-import consultas.CitaEspecialista;
-import consultas.CitaPrimaria;
-import consultas.Citaoperacion;
-import consultas.CitasPaciente;
-import consultas.HistorialPaciente;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.JLabel;
-import java.awt.Font;
 import javax.swing.JButton;
-import javax.swing.LayoutStyle.ComponentPlacement;
-import net.miginfocom.swing.MigLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.awt.Color;
+import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.LineBorder;
+
+import net.miginfocom.swing.MigLayout;
 
 public class AltaPaciente extends JPanel {
 	private JTextField textField;
