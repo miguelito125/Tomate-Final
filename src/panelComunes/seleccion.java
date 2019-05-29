@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class seleccion extends JFrame {
+public class seleccion extends JPanel {
 
 	private JPanel contentPane;
 	Identificacion identificacion=new Identificacion();
@@ -20,28 +20,14 @@ public class seleccion extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					seleccion frame = new seleccion();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
 	public seleccion() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 611, 369);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		
@@ -87,5 +73,9 @@ public class seleccion extends JFrame {
 					.addContainerGap())
 		);
 		contentPane.setLayout(gl_contentPane);
+	}
+
+	public JPanel getContentPane() {
+		return contentPane;
 	}
 }

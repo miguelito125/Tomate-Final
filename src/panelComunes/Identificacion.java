@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 import java.awt.Color;
 import javax.swing.UIManager;
 
-public class Identificacion extends JFrame {
+public class Identificacion extends JPanel{
 
 	private JPanel contentPane;
 	private JTextField textNombre;
@@ -43,12 +43,10 @@ public class Identificacion extends JFrame {
 	 * Create the frame.
 	 */
 	public Identificacion() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(UIManager.getColor("Button.background"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		
