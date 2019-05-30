@@ -1,17 +1,18 @@
-package panelComunes;
+package vistaVentana;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class MAIN extends JFrame {
+import vistaPaciente.PedirCitaPrimaria;
+
+public class UI extends JFrame {
 
 	private JPanel contentPane;
-	Seleccion select=new Seleccion();
-	Tabla tabla=new Tabla();
 
 	/**
 	 * Launch the application.
@@ -20,7 +21,7 @@ public class MAIN extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MAIN frame = new MAIN();
+					UI frame = new UI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -32,14 +33,17 @@ public class MAIN extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public MAIN() {
+	public UI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 1300, 800);
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		contentPane.add(select.getContentPane());
 		setContentPane(contentPane);
+		contentPane.setLayout(new CardLayout(0, 0));
+		
+		PedirCitaPrimaria pedirCitaPrimaria = new PedirCitaPrimaria();
+		contentPane.add(pedirCitaPrimaria, "citaPrimaria");
 	}
 
 }
