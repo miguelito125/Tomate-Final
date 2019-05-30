@@ -14,11 +14,16 @@ import javax.swing.JComboBox;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.util.ArrayList;
+import java.util.Stack;
 
 public class Cita extends JFrame {
 
 	private JPanel contentPane;
 	private JPanel panel;
+	private JButton boton;
+//	ArrayList<JButton> botonera=new ArrayList<>();
+	Stack<JButton> botonera=new Stack<>();
 
 	/**
 	 * Launch the application.
@@ -138,9 +143,11 @@ public class Cita extends JFrame {
 	private void crearBotonera() {
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 4; j++) {
-				panel.add(new JButton());
+				boton=new JButton();
+				botonera.add(boton);
+				panel.add(boton);
 			}
 			
 		}
-	}
+		}
 }
