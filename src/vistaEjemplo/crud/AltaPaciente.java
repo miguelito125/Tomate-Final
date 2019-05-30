@@ -15,7 +15,6 @@ import net.miginfocom.swing.MigLayout;
 
 public class AltaPaciente extends JPanel {
 	private JTextField textField;
-	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
@@ -74,15 +73,6 @@ public class AltaPaciente extends JPanel {
 					.addGap(29))
 		);
 		panel.setLayout(new MigLayout("", "[][grow]", "[][][][][][]"));
-		
-		JLabel lblId = new JLabel("ID");
-		lblId.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		panel.add(lblId, "cell 0 0,alignx trailing");
-		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		textField_1.setColumns(10);
-		panel.add(textField_1, "cell 1 0");
 		
 		JLabel lblNombre = new JLabel("nombre");
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 18));
