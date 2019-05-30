@@ -11,7 +11,6 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.LineBorder;
 
-import net.miginfocom.swing.MigLayout;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JScrollBar;
