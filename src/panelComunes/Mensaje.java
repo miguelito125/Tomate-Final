@@ -19,22 +19,6 @@ public class Mensaje extends JPanel {
 	private JTextField textField;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Mensaje frame = new Mensaje();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Create the frame.
 	 */
 	public Mensaje() {
@@ -55,7 +39,7 @@ public class Mensaje extends JPanel {
 					.addContainerGap()
 					.addComponent(lblMensaje)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(textField, GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+					.addComponent(textField, GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnAplicar)
 					.addContainerGap())
@@ -63,13 +47,16 @@ public class Mensaje extends JPanel {
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblMensaje)
 						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblMensaje)
 						.addComponent(btnAplicar))
-					.addContainerGap(226, Short.MAX_VALUE))
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
+	}
+
+	public JPanel getContentPane() {
+		return contentPane;
 	}
 }

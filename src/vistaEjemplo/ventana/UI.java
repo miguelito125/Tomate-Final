@@ -61,8 +61,7 @@ public class UI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new CardLayout(0, 0));
 		// Los paneles
-		Presentacion presentacion = new Presentacion();
-		contentPane.add(presentacion, "presentacion");
+
 		AltaMedico altaMedico = new AltaMedico();
 		contentPane.add(altaMedico, "altaMedico");
 		AltaPaciente altaPaciente = new AltaPaciente();
