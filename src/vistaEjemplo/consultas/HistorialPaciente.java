@@ -34,12 +34,12 @@ public class HistorialPaciente extends JPanel {
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(33)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 1115, GroupLayout.PREFERRED_SIZE)
 						.addComponent(scrollPane_1, GroupLayout.PREFERRED_SIZE, 1115, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblTratamientos)
-						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 1115, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblCitas)
 						.addComponent(lblCierreOperaciones, GroupLayout.PREFERRED_SIZE, 346, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(55, Short.MAX_VALUE))
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -49,12 +49,12 @@ public class HistorialPaciente extends JPanel {
 					.addGap(18)
 					.addComponent(lblCitas)
 					.addGap(18)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 237, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 193, GroupLayout.PREFERRED_SIZE)
+					.addGap(62)
 					.addComponent(lblTratamientos)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(scrollPane_1, GroupLayout.PREFERRED_SIZE, 246, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(47, Short.MAX_VALUE))
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		
 		String nombresColumnasT[]={"Paciente","medicamento","posologia", "fecha inicio", "fecha fin"};
