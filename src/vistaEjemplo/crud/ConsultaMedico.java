@@ -26,7 +26,7 @@ public class ConsultaMedico extends JPanel {
 	private JTextField textField_7;
 
 	/**
-	 * Create the panel.
+	 * Create the panel. 
 	 */
 	public ConsultaMedico() {
 		JLabel lblAltaPaciente = new JLabel("Consulta Medico");
