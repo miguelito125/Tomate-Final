@@ -15,16 +15,10 @@ import javax.swing.JButton;
 
 public class Mensaje extends JPanel {
 
-	private JPanel contentPane;
 	private JTextField textField;
 
-	/**
-	 * Create the frame.
-	 */
 	public Mensaje() {
 		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
 		JLabel lblMensaje = new JLabel("Mensaje");
 		
@@ -32,7 +26,7 @@ public class Mensaje extends JPanel {
 		textField.setColumns(10);
 		
 		JButton btnAplicar = new JButton("Aplicar");
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		GroupLayout gl_contentPane = new GroupLayout(this);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
@@ -40,23 +34,20 @@ public class Mensaje extends JPanel {
 					.addComponent(lblMensaje)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(textField, GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
-					.addPreferredGap(ComponentPlacement.RELATED)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(btnAplicar)
 					.addContainerGap())
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblMensaje)
-						.addComponent(btnAplicar))
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+					.addComponent(lblMensaje)
+					.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addComponent(btnAplicar))
 		);
-		contentPane.setLayout(gl_contentPane);
+		this.setLayout(gl_contentPane);
 	}
-
 	public JPanel getContentPane() {
-		return contentPane;
+		return this;
 	}
 }
