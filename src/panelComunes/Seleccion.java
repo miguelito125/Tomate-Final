@@ -12,19 +12,15 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class seleccion extends JPanel {
+public class Seleccion extends JFrame {
 
 	private JPanel contentPane;
 	Identificacion identificacion=new Identificacion();
 
 	/**
-	 * Launch the application.
-	 */
-
-	/**
 	 * Create the frame.
 	 */
-	public seleccion() {
+	public Seleccion() {
 		setBounds(100, 100, 611, 369);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -37,8 +33,8 @@ public class seleccion extends JPanel {
 		
 		JComboBox comboBox_1 = new JComboBox();
 		
-		JPanel panel =identificacion.getContentPane();
-//		JPanel panel = new JPanel();
+//		JPanel panel =identificacion.getContentPane();
+		JPanel panel = new JPanel();
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
@@ -72,6 +68,17 @@ public class seleccion extends JPanel {
 					.addComponent(panel, GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
 					.addContainerGap())
 		);
+		GroupLayout gl_panel = new GroupLayout(panel);
+		gl_panel.setHorizontalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 411, Short.MAX_VALUE)
+		);
+		gl_panel.setVerticalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 218, Short.MAX_VALUE)
+		);
+		panel=identificacion.getContentPane();
+		panel.setLayout(gl_panel);
 		contentPane.setLayout(gl_contentPane);
 	}
 
