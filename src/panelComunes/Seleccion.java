@@ -12,19 +12,19 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class Seleccion extends JFrame {
+public class Seleccion extends JPanel {
 
-	private JPanel contentPane;
-	Identificacion identificacion=new Identificacion();
+	private JPanel panel;
+
+	/**
+	 * Launch the application.
+	 */
 
 	/**
 	 * Create the frame.
 	 */
 	public Seleccion() {
-		setBounds(100, 100, 611, 369);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		
+		setBounds(100, 100, 562, 37);		
 		JLabel lblNombre = new JLabel("Nombre");
 		
 		JComboBox comboBox = new JComboBox();
@@ -32,57 +32,31 @@ public class Seleccion extends JFrame {
 		JLabel lblId = new JLabel("ID");
 		
 		JComboBox comboBox_1 = new JComboBox();
-		
-//		JPanel panel =identificacion.getContentPane();
-		JPanel panel = new JPanel();
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		GroupLayout gl_contentPane = new GroupLayout(this);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_contentPane.createSequentialGroup()
+				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addComponent(panel, GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblNombre)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(comboBox, 0, 207, Short.MAX_VALUE)
-							.addGap(69)
-							.addComponent(lblId, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(comboBox_1, 0, 158, Short.MAX_VALUE)
-							.addGap(52)))
-					.addGap(19))
+					.addComponent(lblNombre)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(comboBox, 0, 220, Short.MAX_VALUE)
+					.addGap(75)
+					.addComponent(lblId, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(comboBox_1, 0, 171, Short.MAX_VALUE)
+					.addGap(71))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(31)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-							.addComponent(lblNombre)
-							.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-							.addComponent(lblId)
-							.addComponent(comboBox_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(panel, GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
-					.addContainerGap())
+					.addContainerGap()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNombre)
+						.addComponent(comboBox_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblId))
+					.addContainerGap(7, Short.MAX_VALUE))
 		);
-		GroupLayout gl_panel = new GroupLayout(panel);
-		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 411, Short.MAX_VALUE)
-		);
-		gl_panel.setVerticalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 218, Short.MAX_VALUE)
-		);
-		panel=identificacion.getContentPane();
-		panel.setLayout(gl_panel);
-		contentPane.setLayout(gl_contentPane);
-	}
-
-	public JPanel getContentPane() {
-		return contentPane;
+		this.setLayout(gl_contentPane);
 	}
 }
