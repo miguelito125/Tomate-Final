@@ -16,23 +16,33 @@ import javax.swing.UIManager;
 
 public class Identificacion extends JPanel{
 
-	private JPanel contentPane;
 	private JTextField textNombre;
 	private JTextField textApellidos;
 	private JTextField textNacimiento;
 	private JTextField textField_1;
 	private JTextField textTelefono;
 
-	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Identificacion frame = new Identificacion();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	/**
 	 * Create the frame.
 	 */
 	public Identificacion() {
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBackground(UIManager.getColor("Button.background"));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setBounds(100, 100, 446, 157);
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		
@@ -58,7 +68,7 @@ public class Identificacion extends JPanel{
 		
 		textTelefono = new JTextField();
 		textTelefono.setColumns(10);
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		GroupLayout gl_contentPane = new GroupLayout(this);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
@@ -78,16 +88,16 @@ public class Identificacion extends JPanel{
 								.addComponent(lblNacimiento, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE))
 							.addGap(4)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(textNombre, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
-								.addComponent(textApellidos, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
-								.addComponent(textNacimiento, GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+								.addComponent(textNombre, GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
+								.addComponent(textApellidos, GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
+								.addComponent(textNacimiento, GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
 								.addGroup(gl_contentPane.createSequentialGroup()
 									.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-										.addComponent(textTelefono)
-										.addComponent(textField_1, GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
+										.addComponent(textTelefono, GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+										.addComponent(textField_1, GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE))
 									.addGap(217))))
 						.addComponent(lblTelefono, GroupLayout.PREFERRED_SIZE, 54, GroupLayout.PREFERRED_SIZE))
-					.addGap(10))
+					.addGap(6))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -95,29 +105,29 @@ public class Identificacion extends JPanel{
 					.addGap(17)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNombre)
-						.addComponent(textNombre, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(textNombre))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblApellidos)
-						.addComponent(textApellidos, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(textApellidos))
 					.addGap(6)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblDireccion, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(textNacimiento, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(lblDireccion)
+						.addComponent(textNacimiento))
 					.addGap(6)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNacimiento, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(lblNacimiento)
+						.addComponent(textField_1))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblTelefono, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(textTelefono, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(98))
+						.addComponent(lblTelefono)
+						.addComponent(textTelefono))
+					.addGap(16))
 		);
-		contentPane.setLayout(gl_contentPane);
+		this.setLayout(gl_contentPane);
 	}
 
 	public JPanel getContentPane() {
-		return contentPane;
+		return this;
 	}
 }

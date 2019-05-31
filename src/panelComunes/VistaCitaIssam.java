@@ -19,24 +19,13 @@ import java.util.Stack;
 
 public class VistaCitaIssam extends JPanel {
 
-	private JPanel contentPane;
 	private JPanel panel;
 	private JButton boton;
-//	ArrayList<JButton> botonera=new ArrayList<>();
 	Stack<JButton> botonera=new Stack<>();
-
-	/**
-	 * Create the frame.
-	 */
 	public VistaCitaIssam() {
 		setBounds(100, 100, 750, 485);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		
 		JLabel lblTipo = new JLabel("Medico");
-		
 		JComboBox comboBox = new JComboBox();
-		
 		panel = new JPanel();
 		crearBotonera();
 		JLabel lblLunes = new JLabel("Lunes");
@@ -56,76 +45,71 @@ public class VistaCitaIssam extends JPanel {
 		JLabel label = new JLabel("11:00");
 		
 		JLabel label_1 = new JLabel("10:00");
-		panel.setLayout(new GridLayout(4, 5, 0, 0));
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		GroupLayout gl_contentPane = new GroupLayout(this);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblTipo)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(comboBox, 0, 232, Short.MAX_VALUE)
+					.addGap(439))
+				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(10)
-							.addComponent(lblTipo)
-							.addGap(10)
-							.addComponent(comboBox, 0, 207, Short.MAX_VALUE)
-							.addGap(241))
-						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(157)
-							.addComponent(lblLunes, GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+							.addComponent(lblLunes, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 							.addGap(45)
-							.addComponent(lblMartes, GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+							.addComponent(lblMartes, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 							.addGap(35)
-							.addComponent(lblMiercoles, GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+							.addComponent(lblMiercoles, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 							.addGap(40)
-							.addComponent(lblJueves, GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+							.addComponent(lblJueves, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 							.addGap(50)
-							.addComponent(lblViernes, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+							.addComponent(lblViernes, GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(83)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-									.addGroup(gl_contentPane.createSequentialGroup()
-										.addGap(6)
-										.addComponent(lblHoraDos))
-									.addComponent(label_1)
-									.addComponent(label))
-								.addComponent(lblHoraUno))
+								.addComponent(lblHoraUno)
+								.addComponent(label)
+								.addComponent(label_1)
+								.addComponent(lblHoraDos))
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel, GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)))
-					.addGap(110))
+							.addComponent(panel, GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)))
+					.addGap(198))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(30)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(3)
-							.addComponent(lblTipo))
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblTipo)
 						.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(38)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblLunes)
-						.addComponent(lblMartes)
-						.addComponent(lblMiercoles)
-						.addComponent(lblJueves)
-						.addComponent(lblViernes))
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-							.addGap(17)
-							.addComponent(lblHoraUno, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
-							.addGap(40)
-							.addComponent(lblHoraDos, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
-							.addGap(42)
-							.addComponent(label_1, GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE)
-							.addGap(38)
-							.addComponent(label, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addGap(12))
 						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(38)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblViernes)
+								.addComponent(lblLunes)
+								.addComponent(lblMartes)
+								.addComponent(lblMiercoles)
+								.addComponent(lblJueves))
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel, GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))
-					.addGap(75))
+							.addComponent(panel, GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+							.addGap(129))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(70)
+							.addComponent(lblHoraUno, GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
+							.addGap(39)
+							.addComponent(lblHoraDos, GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
+							.addGap(42)
+							.addComponent(label_1, GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
+							.addGap(38)
+							.addComponent(label, GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
+							.addGap(141))))
 		);
-		contentPane.setLayout(gl_contentPane);
+		panel.setLayout(new GridLayout(4, 5, 0, 0));
+		this.setLayout(gl_contentPane);
 	}
 	private void crearBotonera() {
 		for (int i = 0; i < 5; i++) {
@@ -137,7 +121,4 @@ public class VistaCitaIssam extends JPanel {
 			
 		}
 		}
-	public JPanel getContentPane() {
-		return contentPane;
-	}
 }
