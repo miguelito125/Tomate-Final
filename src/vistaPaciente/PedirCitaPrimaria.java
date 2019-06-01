@@ -20,33 +20,26 @@ public class PedirCitaPrimaria extends JPanel {
 	 * Create the panel.
 	 */
 	public PedirCitaPrimaria() {
+		Seleccion seleccion = new Seleccion();
+		VistaCitaIssam horario = new VistaCitaIssam();
+		Mensaje mensaje = new Mensaje();
 		
 		JLabel lblNewLabel = new JLabel("Cita Atencion Primaria");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
-		JPanel pnlBuscarPaciente = new JPanel();
 		
-		JPanel pnlEspecialistaHorario = new JPanel();
 		
-		JPanel pnlAplicarCitaPrimaria = new JPanel();
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(pnlBuscarPaciente, GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
-							.addContainerGap())
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(pnlEspecialistaHorario, GroupLayout.PREFERRED_SIZE, 497, Short.MAX_VALUE)
-							.addContainerGap())
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(pnlAplicarCitaPrimaria, GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
-							.addContainerGap())
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblNewLabel)
-							.addContainerGap(290, Short.MAX_VALUE))))
+						.addComponent(horario, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 513, Short.MAX_VALUE)
+						.addComponent(seleccion, GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
+						.addComponent(lblNewLabel)
+						.addComponent(mensaje, GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE))
+					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -54,22 +47,14 @@ public class PedirCitaPrimaria extends JPanel {
 					.addContainerGap()
 					.addComponent(lblNewLabel)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(pnlBuscarPaciente, GroupLayout.PREFERRED_SIZE, 63, Short.MAX_VALUE)
+					.addComponent(seleccion, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(pnlEspecialistaHorario, GroupLayout.PREFERRED_SIZE, 279, GroupLayout.PREFERRED_SIZE)
+					.addComponent(horario, GroupLayout.PREFERRED_SIZE, 318, Short.MAX_VALUE)
 					.addGap(18)
-					.addComponent(pnlAplicarCitaPrimaria, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+					.addComponent(mensaje, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
-		pnlAplicarCitaPrimaria.setLayout(new BorderLayout(0, 0));
-		pnlEspecialistaHorario.setLayout(new BorderLayout(0, 0));
-		pnlBuscarPaciente.setLayout(new BorderLayout(0, 0));
-		VistaCitaIssam cita = new VistaCitaIssam();
-		pnlEspecialistaHorario.add(cita.getContentPane());
-		Mensaje mensaje = new Mensaje();
-		pnlAplicarCitaPrimaria.add(mensaje.getContentPane());
-		Seleccion seleccion = new Seleccion();
-		pnlBuscarPaciente.add(seleccion.getContentPane());
+		
 		setLayout(groupLayout);
 
 	}
