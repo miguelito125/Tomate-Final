@@ -1,4 +1,4 @@
-package VistaMedico;
+package vistaMedico;
 
 import java.awt.Font;
 
@@ -11,6 +11,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+
+import panelComunes.Mensaje;
 
 public class AtenderCita extends JPanel {
 
@@ -65,7 +67,7 @@ public class AtenderCita extends JPanel {
 
 		JScrollPane scrollPane = new JScrollPane();
 
-		JPanel panel = new JPanel();
+		Mensaje mensaje = new Mensaje();
 
 		JTextArea citaObservaciones = new JTextArea();
 		scrollPane.setViewportView(citaObservaciones);
@@ -97,7 +99,7 @@ public class AtenderCita extends JPanel {
 												.addGap(92)))
 						.addGap(10))
 				.addGroup(gl_contentPane.createSequentialGroup().addGap(39)
-						.addComponent(panel, GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE).addGap(10)));
+						.addComponent(mensaje, GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE).addGap(10)));
 		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup().addGap(26).addComponent(lblAtencionACita).addGap(18)
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -132,7 +134,7 @@ public class AtenderCita extends JPanel {
 												GroupLayout.PREFERRED_SIZE)
 										.addGap(18).addComponent(citaPeriodo, GroupLayout.PREFERRED_SIZE,
 												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-						.addGap(18).addComponent(panel, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)));
+						.addGap(18).addComponent(mensaje, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)));
 		contentPane.setLayout(gl_contentPane);
 	}
 }
