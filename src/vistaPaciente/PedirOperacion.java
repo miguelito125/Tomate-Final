@@ -6,6 +6,10 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.LayoutStyle.ComponentPlacement;
+
+import panelComunes.Mensaje;
+import panelComunes.Seleccion;
+
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
@@ -16,13 +20,14 @@ public class PedirOperacion extends JPanel {
 	 * Create the panel.
 	 */
 	public PedirOperacion() {
+		Seleccion seleccion = new Seleccion();
+		Mensaje mensaje = new Mensaje();
+		
 		
 		JLabel lblCitaOperacion = new JLabel("Cita Operacion");
 		lblCitaOperacion.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
-		JPanel pnlBusquedaPAcienteOperacion = new JPanel();
 		
-		JPanel pnlAplicarCitaOperacion = new JPanel();
 		
 		JLabel lblNewLabel = new JLabel("Tipo");
 		
@@ -41,29 +46,28 @@ public class PedirOperacion extends JPanel {
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(pnlAplicarCitaOperacion, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-							.addComponent(pnlBusquedaPAcienteOperacion, GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
-							.addComponent(lblCitaOperacion))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-							.addGap(18)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(cmbTipoOperacion, 0, 130, Short.MAX_VALUE)
-									.addPreferredGap(ComponentPlacement.RELATED))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(lblFechasDisponibles, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-									.addGap(44)))
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(lblNewLabel_1)
-									.addGap(18)
-									.addComponent(cmbCirujanoOperacion, 0, 162, Short.MAX_VALUE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(cmbBusquedaFecha, 0, 160, Short.MAX_VALUE)
-									.addGap(56)))))
-					.addGap(48))
+							.addComponent(seleccion, GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
+							.addGap(19))
+						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+							.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+									.addComponent(mensaje, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
+									.addComponent(lblCitaOperacion, Alignment.LEADING)
+									.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+										.addComponent(lblFechasDisponibles, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(cmbBusquedaFecha, GroupLayout.PREFERRED_SIZE, 433, GroupLayout.PREFERRED_SIZE)))
+								.addGap(19))
+							.addGroup(groupLayout.createSequentialGroup()
+								.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(cmbTipoOperacion, GroupLayout.PREFERRED_SIZE, 181, GroupLayout.PREFERRED_SIZE)
+								.addGap(49)
+								.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(cmbCirujanoOperacion, 0, 269, Short.MAX_VALUE)
+								.addGap(18)))))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -71,23 +75,21 @@ public class PedirOperacion extends JPanel {
 					.addContainerGap()
 					.addComponent(lblCitaOperacion)
 					.addGap(18)
-					.addComponent(pnlBusquedaPAcienteOperacion, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(seleccion, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
+					.addGap(47)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel)
+						.addComponent(lblNewLabel_1)
 						.addComponent(cmbTipoOperacion, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(cmbCirujanoOperacion, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_1))
-					.addGap(49)
+						.addComponent(cmbCirujanoOperacion, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(59)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblFechasDisponibles)
 						.addComponent(cmbBusquedaFecha, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
-					.addComponent(pnlAplicarCitaOperacion, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
+					.addComponent(mensaje, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
-		pnlAplicarCitaOperacion.setLayout(new BorderLayout(0, 0));
-		pnlBusquedaPAcienteOperacion.setLayout(new BorderLayout(0, 0));
 		setLayout(groupLayout);
 
 	}
