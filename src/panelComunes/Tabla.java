@@ -1,45 +1,58 @@
-package vistaEjemplo.consultas;
+package panelComunes;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
 import java.awt.Font;
 
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.border.EmptyBorder;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class CitasPaciente extends JPanel {
+public class Tabla extends JPanel {
+	JScrollPane scrollPane;
 	private JTable table;
 
 	/**
-	 * Create the panel.
+	 * Launch the application.
 	 */
-	public CitasPaciente() {
 
-		JLabel lblCierreOperaciones = new JLabel("Citas Pendiente Paciente ");
-		lblCierreOperaciones.setFont(new Font("Tahoma", Font.PLAIN, 25));
+	/**
+	 * Create the frame.
+	 */
+	public Tabla() {
+		
+		JLabel lblTitulo = new JLabel("Titulo");
+		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		
 		JScrollPane scrollPane = new JScrollPane();
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(33)
+					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 1115, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblCierreOperaciones, GroupLayout.PREFERRED_SIZE, 346, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(55, Short.MAX_VALUE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
+							.addContainerGap())
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(lblTitulo, GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
+							.addGap(517))))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(43)
-					.addComponent(lblCierreOperaciones, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 455, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(156, Short.MAX_VALUE))
+					.addContainerGap()
+					.addComponent(lblTitulo, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+					.addContainerGap())
 		);
 		
 		String nombresColumnas[]={"Paciente	","tipo","fecha", "medico"};
@@ -55,4 +68,7 @@ public class CitasPaciente extends JPanel {
 
 	}
 
+	public Tabla getContentPane() {
+		return this;
+	}
 }
