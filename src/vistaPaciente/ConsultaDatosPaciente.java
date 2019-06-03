@@ -24,7 +24,8 @@ public class ConsultaDatosPaciente extends JPanel {
 		JLabel lblNewLabel = new JLabel("Consulta Datos Paciente");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
-		
+		int[] camposDeshabilitados=  {0,1,2,3,4};
+		identificacion.deshabilitarCampo(camposDeshabilitados);
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)

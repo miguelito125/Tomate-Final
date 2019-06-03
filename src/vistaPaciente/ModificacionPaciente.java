@@ -28,27 +28,25 @@ public class ModificacionPaciente extends JPanel {
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
 		
-		
+		int[] camposDeshabilitados=  {0,1,3};
+		identificacion.deshabilitarCampo(camposDeshabilitados);
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblNewLabel)
-					.addGap(214))
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addGap(26)
-					.addComponent(identificacion, GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
-					.addContainerGap())
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(26)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(seleccion, GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
-							.addContainerGap())
+							.addGap(26)
+							.addComponent(identificacion, GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(mensaje, GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-							.addGap(24))))
+							.addGap(26)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(mensaje, GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
+								.addComponent(seleccion, GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(lblNewLabel)))
+					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -56,11 +54,11 @@ public class ModificacionPaciente extends JPanel {
 					.addContainerGap()
 					.addComponent(lblNewLabel)
 					.addGap(18)
-					.addComponent(seleccion, GroupLayout.PREFERRED_SIZE, 37, Short.MAX_VALUE)
+					.addComponent(seleccion, GroupLayout.PREFERRED_SIZE, 58, Short.MAX_VALUE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(identificacion, GroupLayout.PREFERRED_SIZE, 149, Short.MAX_VALUE)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(mensaje, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+					.addComponent(identificacion, GroupLayout.PREFERRED_SIZE, 169, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(mensaje, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		setLayout(groupLayout);
