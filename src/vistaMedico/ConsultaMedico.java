@@ -13,7 +13,6 @@ import panelComunes.Identificacion;
 
 public class ConsultaMedico extends JPanel {
 
-	private JPanel contentPane;
 	private JTextField altaEspecialidad;
 	private JTextField altaConsulta;
 	private JTextField altaHorario;
@@ -23,8 +22,6 @@ public class ConsultaMedico extends JPanel {
 	 */
 	public ConsultaMedico() {
 		setBounds(100, 100, 653, 450);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		JLabel lblConsultaMedico = new JLabel("Consulta Medico");
 		lblConsultaMedico.setFont(new Font("Tahoma", Font.PLAIN, 24));
@@ -45,7 +42,7 @@ public class ConsultaMedico extends JPanel {
 		altaHorario.setColumns(10);
 
 		Identificacion identificacion = new Identificacion();
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		GroupLayout gl_contentPane = new GroupLayout(this);
 		gl_contentPane.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup().addGap(10).addComponent(lblConsultaMedico))
 				.addGroup(gl_contentPane.createSequentialGroup().addGap(163)
@@ -75,6 +72,6 @@ public class ConsultaMedico extends JPanel {
 				.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE).addComponent(altaHorario,
 						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblHorario))));
-		contentPane.setLayout(gl_contentPane);
+		this.setLayout(gl_contentPane);
 	}
 }
