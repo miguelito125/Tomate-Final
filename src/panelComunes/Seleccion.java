@@ -11,9 +11,7 @@ public class Seleccion extends JPanel {
 
 	private JPanel panel;
 
-	/**
-	 * Launch the application.
-	 */
+	
 
 	/**
 	 * Create the frame.

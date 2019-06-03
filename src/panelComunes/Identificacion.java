@@ -1,48 +1,33 @@
 package panelComunes;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.util.Stack;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
-import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.awt.Color;
-import javax.swing.UIManager;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class Identificacion extends JPanel{
 
 	private JTextField textNombre;
 	private JTextField textApellidos;
-	private JTextField textNacimiento;
-	private JTextField textField_1;
+	private JTextField textDireccion;
+	private JTextField txtNacimiento;
 	private JTextField textTelefono;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Identificacion frame = new Identificacion();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
+	private Stack<JTextField> misTxtsFields = new Stack<>();
+	
 
 	/**
 	 * Create the frame.
 	 */
 	public Identificacion() {
+		
 		setBounds(100, 100, 446, 157);
+		
+		
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		
@@ -60,11 +45,11 @@ public class Identificacion extends JPanel{
 		textApellidos = new JTextField();
 		textApellidos.setColumns(10);
 		
-		textNacimiento = new JTextField();
-		textNacimiento.setColumns(10);
+		textDireccion = new JTextField();
+		textDireccion.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
+		txtNacimiento = new JTextField();
+		txtNacimiento.setColumns(10);
 		
 		textTelefono = new JTextField();
 		textTelefono.setColumns(10);
@@ -90,11 +75,11 @@ public class Identificacion extends JPanel{
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(textNombre, GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
 								.addComponent(textApellidos, GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-								.addComponent(textNacimiento, GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
+								.addComponent(textDireccion, GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
 								.addGroup(gl_contentPane.createSequentialGroup()
 									.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 										.addComponent(textTelefono, GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
-										.addComponent(textField_1, GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE))
+										.addComponent(txtNacimiento, GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE))
 									.addGap(217))))
 						.addComponent(lblTelefono, GroupLayout.PREFERRED_SIZE, 54, GroupLayout.PREFERRED_SIZE))
 					.addGap(6))
@@ -113,11 +98,11 @@ public class Identificacion extends JPanel{
 					.addGap(6)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblDireccion)
-						.addComponent(textNacimiento))
+						.addComponent(textDireccion))
 					.addGap(6)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNacimiento)
-						.addComponent(textField_1))
+						.addComponent(txtNacimiento))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblTelefono)
@@ -125,8 +110,20 @@ public class Identificacion extends JPanel{
 					.addGap(16))
 		);
 		this.setLayout(gl_contentPane);
-	}
 
+		misTxtsFields.add(textNombre);
+		misTxtsFields.add(textApellidos);
+		misTxtsFields.add(textDireccion);
+		misTxtsFields.add(txtNacimiento);
+		misTxtsFields.add(textTelefono);
+	}
+	
+	public void deshabilitarCampo(int [] campos) {
+		for (int i = 0; i < campos.length; i++) {
+			misTxtsFields.get(campos[i]).setEditable(false);
+		}
+			
+	}
 	public JPanel getContentPane() {
 		return this;
 	}

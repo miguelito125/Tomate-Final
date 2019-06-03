@@ -23,11 +23,12 @@ public class BajaPAciente extends JPanel {
 		Seleccion seleccion = new Seleccion();
 		
 		
+		
 		JLabel lblBajaPaciente = new JLabel("Baja Paciente");
 		lblBajaPaciente.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
-		
-		
+		int[] camposDeshabilitados=  {0,1,3};
+		identificacion.deshabilitarCampo(camposDeshabilitados);
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
