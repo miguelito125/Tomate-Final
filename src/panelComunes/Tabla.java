@@ -19,10 +19,7 @@ public class Tabla extends JPanel {
 	JScrollPane scrollPane;
 	private JTable table;
 
-	/**
-	 * Launch the application.
-	 */
-
+	
 	/**
 	 * Create the frame.
 	 */

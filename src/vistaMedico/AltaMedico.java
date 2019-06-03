@@ -16,7 +16,6 @@ import panelComunes.Mensaje;
 
 public class AltaMedico extends JPanel {
 
-	private JPanel contentPane;
 	private JTextField altaConsulta;
 	private JTextField altaHorario;
 
@@ -25,8 +24,6 @@ public class AltaMedico extends JPanel {
 	 */
 	public AltaMedico() {
 		setBounds(100, 100, 657, 475);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		JLabel lblEspecialidad = new JLabel("Especialidad");
 
@@ -48,7 +45,7 @@ public class AltaMedico extends JPanel {
 		Identificacion identificacion = new Identificacion();
 
 		Mensaje mensaje = new Mensaje();
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		GroupLayout gl_contentPane = new GroupLayout(this);
 		gl_contentPane.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup().addGap(31).addComponent(lblAltaMedico)
 						.addContainerGap(427, Short.MAX_VALUE))
@@ -85,6 +82,6 @@ public class AltaMedico extends JPanel {
 						altaHorario, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 				.addGap(55).addComponent(mensaje, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
 				.addContainerGap(26, Short.MAX_VALUE)));
-		contentPane.setLayout(gl_contentPane);
+		this.setLayout(gl_contentPane);
 	}
 }

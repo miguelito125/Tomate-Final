@@ -16,7 +16,6 @@ import panelComunes.Mensaje;
 
 public class AtenderCita extends JPanel {
 
-	private JPanel contentPane;
 	private JTextField citaPaciente;
 	private JTextField citaHora;
 	private JTextField citaPeriodo;
@@ -27,8 +26,6 @@ public class AtenderCita extends JPanel {
 	 */
 	public AtenderCita() {
 		setBounds(100, 100, 671, 487);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		JLabel lblMedico = new JLabel("Medico");
 
@@ -71,7 +68,7 @@ public class AtenderCita extends JPanel {
 
 		JTextArea citaObservaciones = new JTextArea();
 		scrollPane.setViewportView(citaObservaciones);
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		GroupLayout gl_contentPane = new GroupLayout(this);
 		gl_contentPane.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup().addGap(29).addComponent(lblAtencionACita))
 				.addGroup(gl_contentPane.createSequentialGroup().addGap(39).addComponent(lblMedico).addGap(35)
@@ -135,6 +132,6 @@ public class AtenderCita extends JPanel {
 										.addGap(18).addComponent(citaPeriodo, GroupLayout.PREFERRED_SIZE,
 												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 						.addGap(18).addComponent(mensaje, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)));
-		contentPane.setLayout(gl_contentPane);
+		this.setLayout(gl_contentPane);
 	}
 }

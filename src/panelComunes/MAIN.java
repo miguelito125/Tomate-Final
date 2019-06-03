@@ -12,7 +12,8 @@ public class MAIN extends JFrame {
 	private JPanel contentPane;
 	Seleccion select=new Seleccion();
 	Tabla tabla=new Tabla();
-
+	Identificacion identi = new Identificacion();
+	
 	/**
 	 * Launch the application.
 	 */
@@ -38,8 +39,9 @@ public class MAIN extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
-		contentPane.add(select.getContentPane());
+		contentPane.add(identi);
 		setContentPane(contentPane);
+		
 	}
 
 }
