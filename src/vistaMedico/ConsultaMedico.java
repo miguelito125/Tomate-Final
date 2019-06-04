@@ -10,6 +10,9 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import panelComunes.Identificacion;
+import panelComunes.Seleccion;
+
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class ConsultaMedico extends JPanel {
 
@@ -33,45 +36,82 @@ public class ConsultaMedico extends JPanel {
 		JLabel lblHorario = new JLabel("Horario");
 
 		altaEspecialidad = new JTextField();
+		altaEspecialidad.setEditable(false);
 		altaEspecialidad.setColumns(10);
 
 		altaConsulta = new JTextField();
+		altaConsulta.setEditable(false);
 		altaConsulta.setColumns(10);
 
 		altaHorario = new JTextField();
+		altaHorario.setEditable(false);
 		altaHorario.setColumns(10);
-
+		Seleccion seleccion = new Seleccion();
 		Identificacion identificacion = new Identificacion();
+		int[] camposDeshabilitados=  {0,1,2,3,4};
+		identificacion.deshabilitarCampo(camposDeshabilitados);
+		
 		GroupLayout gl_contentPane = new GroupLayout(this);
-		gl_contentPane.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup().addGap(10).addComponent(lblConsultaMedico))
-				.addGroup(gl_contentPane.createSequentialGroup().addGap(163)
-						.addComponent(identificacion, GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE).addGap(95))
-				.addGroup(gl_contentPane.createSequentialGroup().addGap(170).addGroup(gl_contentPane
-						.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup().addComponent(lblHorario).addGap(41)
-								.addComponent(altaHorario, GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
-						.addGroup(gl_contentPane.createSequentialGroup().addComponent(lblConsulta).addGap(34)
-								.addComponent(altaConsulta, GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
-						.addGroup(gl_contentPane.createSequentialGroup().addComponent(lblEspecialidad).addGap(18)
-								.addComponent(altaEspecialidad, GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)))
-						.addGap(95)));
-		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
-				.createSequentialGroup().addGap(29).addComponent(lblConsultaMedico).addGap(41)
-				.addComponent(identificacion, GroupLayout.PREFERRED_SIZE, 143, GroupLayout.PREFERRED_SIZE).addGap(18)
-				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(3).addComponent(lblEspecialidad))
-						.addComponent(altaEspecialidad, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE))
-				.addGap(11)
-				.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(altaConsulta, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE)
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(170)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(lblEspecialidad)
+							.addGap(18)
+							.addComponent(altaEspecialidad, GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+								.addComponent(lblHorario)
+								.addComponent(lblConsulta))
+							.addGap(34)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(altaConsulta, GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
+								.addComponent(altaHorario, GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE))))
+					.addGap(95))
+				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblConsultaMedico)
+					.addContainerGap(471, Short.MAX_VALUE))
+				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+					.addGap(163)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(identificacion, GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
+							.addContainerGap())
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(seleccion, GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
+							.addGap(95))))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblConsultaMedico)
+					.addGap(24)
+					.addComponent(seleccion, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(identificacion, GroupLayout.PREFERRED_SIZE, 151, Short.MAX_VALUE)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(18)
+							.addComponent(lblEspecialidad)
+							.addGap(7))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(altaEspecialidad)
+							.addPreferredGap(ComponentPlacement.RELATED)))
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(altaConsulta)
 						.addComponent(lblConsulta))
-				.addGap(11)
-				.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE).addComponent(altaHorario,
-						GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblHorario))));
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(altaHorario)
+						.addComponent(lblHorario))
+					.addGap(87))
+		);
 		this.setLayout(gl_contentPane);
 	}
 }

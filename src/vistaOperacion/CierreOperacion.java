@@ -32,8 +32,8 @@ public class CierreOperacion extends JPanel {
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(tabla, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
 						.addComponent(mensaje, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
+						.addComponent(tabla, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
 						.addComponent(lblNewLabel, Alignment.LEADING))
 					.addGap(37))
 		);
@@ -44,8 +44,8 @@ public class CierreOperacion extends JPanel {
 					.addComponent(lblNewLabel)
 					.addGap(18)
 					.addComponent(tabla, GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
-					.addGap(18)
-					.addComponent(mensaje, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(mensaje, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		setLayout(groupLayout);

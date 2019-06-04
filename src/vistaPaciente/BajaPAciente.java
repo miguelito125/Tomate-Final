@@ -27,12 +27,12 @@ public class BajaPAciente extends JPanel {
 		JLabel lblBajaPaciente = new JLabel("Baja Paciente");
 		lblBajaPaciente.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
-		int[] camposDeshabilitados=  {0,1,3};
+		int[] camposDeshabilitados=  {0,1,2,3,4};
 		identificacion.deshabilitarCampo(camposDeshabilitados);
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
 					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 						.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
 							.addGap(31)
@@ -53,8 +53,8 @@ public class BajaPAciente extends JPanel {
 					.addContainerGap()
 					.addComponent(lblBajaPaciente, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(seleccion, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(seleccion, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(identificacion, GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(mensaje, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
