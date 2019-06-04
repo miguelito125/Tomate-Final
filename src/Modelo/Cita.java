@@ -1,10 +1,11 @@
 package Modelo;
 
 
+import java.io.Serializable;
 import java.time.LocalTime;
 
 
-public class Cita {
+public class Cita implements Serializable{
 	private String idCita;
 	private String idPaciente;
 	private String idMedico;

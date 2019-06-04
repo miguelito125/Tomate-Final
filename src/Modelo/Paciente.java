@@ -3,7 +3,7 @@ package Modelo;
 import java.util.Date;
 import java.util.Stack;
 
-public class Paciente extends Persona {
+public class Paciente extends Persona{
 	private Date fechaNacimiento; //hay que cambiar el tipo de dato
 	private Stack<Cita> citasPendientes;
 	
