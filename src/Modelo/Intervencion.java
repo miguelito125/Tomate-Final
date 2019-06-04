@@ -1,5 +1,7 @@
 package Modelo;
 
-public class Intervencion {
+import java.io.Serializable;
+
+public class Intervencion implements Serializable{
 
 }
