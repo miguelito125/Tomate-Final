@@ -21,7 +21,6 @@ public class AtenderCita extends JPanel {
 	private JTextField citaHora;
 	private JTextField citaPeriodo;
 	private JTextField citaDosis;
-	private JTextField textField;
 
 	/**
 	 * Create the frame.
@@ -72,12 +71,9 @@ public class AtenderCita extends JPanel {
 
 		JTextArea citaObservaciones = new JTextArea();
 		scrollPane.setViewportView(citaObservaciones);
-		
-		textField = new JTextField();
-		textField.setColumns(10);
 		GroupLayout gl_contentPane = new GroupLayout(this);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(29)
 					.addComponent(lblAtencionACita))
@@ -115,15 +111,14 @@ public class AtenderCita extends JPanel {
 					.addGap(39)
 					.addComponent(mensaje, GroupLayout.DEFAULT_SIZE, 622, Short.MAX_VALUE)
 					.addGap(10))
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(39)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addGroup(gl_contentPane.createSequentialGroup()
+						.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
 							.addComponent(lblObservaciones)
-							.addGap(118)
+							.addPreferredGap(ComponentPlacement.RELATED, 272, Short.MAX_VALUE)
 							.addComponent(lblTratamiento)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(textField, GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE))
+							.addGap(81))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(lblPaciente)
 							.addGap(27)
@@ -148,18 +143,19 @@ public class AtenderCita extends JPanel {
 							.addComponent(lblPaciente))
 						.addComponent(citaPaciente, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(18)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(3)
-							.addComponent(lblNewLabel))
-						.addComponent(citaHora, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(41)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addComponent(lblObservaciones)
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(3)
+									.addComponent(lblNewLabel))
+								.addComponent(citaHora, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(41)
+							.addComponent(lblObservaciones)
+							.addGap(9))
+						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(lblTratamiento)
-							.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-					.addGap(9)
+							.addGap(18)))
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(9)
