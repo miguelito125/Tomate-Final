@@ -3,6 +3,7 @@ package panelComunes;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,15 +19,19 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 public class Tabla extends JPanel {
 	JScrollPane scrollPane;
 	private JTable table;
-
-	
+	String cadena[]=new String[1];
+	String nombresColumnas[]=null;
+	ArrayList<String[]> filas=new ArrayList<>();
+	String data2[][];
+	String data[][]= new String[1][1];
 	/**
 	 * Create the frame.
 	 */
-	public Tabla() {
-		
-		JLabel lblTitulo = new JLabel("Titulo");
+	public Tabla(String titulo, String[] titulosColumnas) {
+		nombresColumnas= titulosColumnas;
+		JLabel lblTitulo = new JLabel(titulo);
 		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		
 		
 		JScrollPane scrollPane = new JScrollPane();
 		GroupLayout groupLayout = new GroupLayout(this);
@@ -52,8 +57,16 @@ public class Tabla extends JPanel {
 					.addContainerGap())
 		);
 		
-		String nombresColumnas[]={"Paciente	","tipo","fecha", "medico"};
-		String data[][]={{"Gonzalo Berceo, Jonathan","Consulta primaria","16/06/2019","Jovellanos pursuy,Benito"}};
+
+//		data=filas.toArray(data);
+		data2=filas.toArray(data.clone());
+		data=data2;
+		
+//		for (int i = 0; i < data.length; i++) {
+//			for (int j = 0; j < data[i].length; j++) {
+//				System.out.println(data[i][j]);
+//			}
+//		}
 		table = new JTable();
 		Font font = new Font("Tahoma", Font.PLAIN, 16);
 		table.setFont(font);
@@ -62,9 +75,16 @@ public class Tabla extends JPanel {
 		table.setModel(defaultTableModel);
 		scrollPane.setViewportView(table);
 		setLayout(groupLayout);
-
+		
+		
 	}
-
+	
+	public void agregarFila(String[] datos) {
+		filas.add(datos);
+		data2=filas.toArray(data.clone());
+		data=data2;
+		
+	}
 	public Tabla getContentPane() {
 		return this;
 	}
