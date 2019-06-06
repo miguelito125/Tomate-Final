@@ -8,50 +8,51 @@ import java.awt.Font;
 import java.awt.BorderLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+import panelComunes.Identificacion;
+import panelComunes.Mensaje;
+
 public class AltaPaciente extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
 	public AltaPaciente() {
-		
+		Identificacion identificacion = new Identificacion();
+		Mensaje mensaje = new Mensaje();
 		JLabel lblAltaPaciente = new JLabel("Alta Paciente");
 		lblAltaPaciente.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
-		JPanel pnlCamposAltaPaciente = new JPanel();
 		
-		JPanel pnlaAplicarAltaPaciente = new JPanel();
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(lblAltaPaciente, GroupLayout.PREFERRED_SIZE, 145, GroupLayout.PREFERRED_SIZE))
+							.addComponent(mensaje, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+							.addContainerGap())
 						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(49)
-							.addComponent(pnlCamposAltaPaciente, GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
-							.addGap(51))
+							.addComponent(lblAltaPaciente, GroupLayout.PREFERRED_SIZE, 145, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap(295, Short.MAX_VALUE))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(pnlaAplicarAltaPaciente, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)))
-					.addContainerGap())
+							.addComponent(identificacion, GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE)
+							.addGap(16))))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblAltaPaciente, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(pnlCamposAltaPaciente, GroupLayout.PREFERRED_SIZE, 101, GroupLayout.PREFERRED_SIZE)
-					.addGap(71)
-					.addComponent(pnlaAplicarAltaPaciente, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(21, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(identificacion, GroupLayout.PREFERRED_SIZE, 166, Short.MAX_VALUE)
+					.addGap(14)
+					.addComponent(mensaje, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+					.addGap(21))
 		);
-		pnlaAplicarAltaPaciente.setLayout(new BorderLayout(0, 0));
-		pnlCamposAltaPaciente.setLayout(new BorderLayout(0, 0));
-		setLayout(groupLayout);
+		
 
+	
+		this.setLayout(groupLayout);
 	}
 }

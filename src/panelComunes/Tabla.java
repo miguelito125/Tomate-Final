@@ -19,10 +19,7 @@ public class Tabla extends JPanel {
 	JScrollPane scrollPane;
 	private JTable table;
 
-	/**
-	 * Launch the application.
-	 */
-
+	
 	/**
 	 * Create the frame.
 	 */
@@ -39,10 +36,10 @@ public class Tabla extends JPanel {
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
+							.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
 							.addContainerGap())
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(lblTitulo, GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+							.addComponent(lblTitulo, GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
 							.addGap(517))))
 		);
 		groupLayout.setVerticalGroup(

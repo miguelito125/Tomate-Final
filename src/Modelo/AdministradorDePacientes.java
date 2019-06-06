@@ -1,43 +1,13 @@
 package Modelo;
 
-import java.util.LinkedList;
+import java.util.Date;
 
 public class AdministradorDePacientes {
-	private LinkedList<Paciente> pacientes; 
-
-	public AdministradorDePacientes() {
-		super();
-		pacientes=new LinkedList<Paciente>();
-	}
 	
-	public boolean darDeAltaPaciente(Paciente paciente) {
-		return pacientes.add(paciente);
-	}
-	
-	public Paciente buscarPacientePorNombre(String nombre) {
-		Paciente pacienteABuscar=null;
+	public Paciente darDeAltaPaciente(String idPersona, String nombre, String direccion, String telefono, Date fechaNacimiento) {
+		Paciente paciente=new Paciente(idPersona, nombre, direccion, telefono, fechaNacimiento);
 		
-		for (Paciente paciente : pacientes) {
-			if(paciente.getNombre()==nombre) {
-				pacienteABuscar=paciente;
-			}
-		}
-		return pacienteABuscar;
+		return paciente;
 	}
 	
-	public Paciente buscarPacientePorId(String idPaciente) {
-		Paciente pacienteABuscar=null;
-		
-		for (Paciente paciente : pacientes) {
-			if(paciente.getIdPersona()==idPaciente) {
-				pacienteABuscar=paciente;
-			}
-		}
-		return pacienteABuscar;
-	}
-	
-	public boolean darDeBajaPaciente(Paciente paciente) {
-		
-		return pacientes.remove(paciente);
-	}
 }

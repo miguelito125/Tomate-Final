@@ -1,28 +1,39 @@
 package Modelo;
 
-import java.util.Date;
 
-public class Cita {
+import java.io.Serializable;
+import java.time.LocalTime;
+
+
+public class Cita implements Serializable{
 	private String idCita;
-	private Paciente paciente;
-	private Date fechaCita;
+	private String idPaciente;
+	private String idMedico;
+	private LocalTime hora;
+	private DiasDeLaSemana dia;
 	private boolean confirmacionDeAsistencia;
 	private String observaciones;
 	
-	public Cita(String idCita, Paciente paciente, boolean confirmacionAsistencia, Date fechaCita) {
+	public Cita(String idCita, String idPaciente, String idMedico, boolean confirmacionAsistencia, LocalTime fechaCita, DiasDeLaSemana dia) {
 		super();
 		this.idCita=idCita;
-		this.setPaciente(paciente);
+		this.idPaciente=idPaciente;
+		this.idMedico=idMedico;
 		confirmacionAsistencia=true;
-		this.fechaCita=fechaCita;
+		fechaCita= LocalTime.of(fechaCita.getHour(), 0);
+		this.dia=dia;
+	}
+
+	public String getIdMedico() {
+		return idMedico;
 	}
 
 	public String getIdCita() {
 		return idCita;
 	}
 
-	public Date getFechaCita() {
-		return fechaCita;
+	public LocalTime getFechaCita() {
+		return hora;
 	}
 
 	public boolean isConfirmacionDeAsistencia() {
@@ -37,11 +48,16 @@ public class Cita {
 		this.observaciones = observaciones;
 	}
 
-	public Paciente getPaciente() {
-		return paciente;
+	public String getPaciente() {
+		return idPaciente;
 	}
 
-	public void setPaciente(Paciente paciente) {
-		this.paciente = paciente;
+	public void setPaciente(String paciente) {
+		this.idPaciente = paciente;
 	}
+
+	public DiasDeLaSemana getDia() {
+		return dia;
+	}
+	
 }

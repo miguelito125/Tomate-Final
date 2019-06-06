@@ -6,6 +6,9 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.LayoutStyle.ComponentPlacement;
+
+import panelComunes.Tabla;
+
 import java.awt.BorderLayout;
 
 public class ConsultaCitasPendientes extends JPanel {
@@ -14,20 +17,20 @@ public class ConsultaCitasPendientes extends JPanel {
 	 * Create the panel.
 	 */
 	public ConsultaCitasPendientes() {
+		Tabla tabla = new Tabla();
 		
 		JLabel lblNewLabel = new JLabel("Citas Pendiente Paciente");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
-		JPanel pnlCitasPendientePaciente = new JPanel();
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(lblNewLabel)
-						.addComponent(pnlCitasPendientePaciente, GroupLayout.PREFERRED_SIZE, 394, GroupLayout.PREFERRED_SIZE))
-					.addGap(46))
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(tabla, GroupLayout.PREFERRED_SIZE, 549, Short.MAX_VALUE)
+						.addComponent(lblNewLabel))
+					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -35,10 +38,9 @@ public class ConsultaCitasPendientes extends JPanel {
 					.addContainerGap()
 					.addComponent(lblNewLabel)
 					.addGap(18)
-					.addComponent(pnlCitasPendientePaciente, GroupLayout.PREFERRED_SIZE, 174, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(68, Short.MAX_VALUE))
+					.addComponent(tabla, GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+					.addContainerGap())
 		);
-		pnlCitasPendientePaciente.setLayout(new BorderLayout(0, 0));
 		setLayout(groupLayout);
 
 	}

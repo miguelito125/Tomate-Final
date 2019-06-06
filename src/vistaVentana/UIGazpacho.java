@@ -1,4 +1,4 @@
-package vistaEjemplo.ventana;
+package vistaVentana;
 
 import java.awt.CardLayout;
 import java.awt.EventQueue;
@@ -13,46 +13,31 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import vistaEjemplo.consultas.AtencionCita;
-import vistaEjemplo.consultas.CierreOperacion;
-import vistaEjemplo.consultas.CitaEspecialista;
-import vistaEjemplo.consultas.CitaPrimaria;
-import vistaEjemplo.consultas.Citaoperacion;
-import vistaEjemplo.consultas.CitasPaciente;
-import vistaEjemplo.consultas.HistorialPaciente;
-import vistaEjemplo.consultas.Presentacion;
-import vistaEjemplo.crud.AltaMedico;
-import vistaEjemplo.crud.AltaPaciente;
-import vistaEjemplo.crud.BajaPaciente;
-import vistaEjemplo.crud.ConsultaMedico;
-import vistaEjemplo.crud.ConsultaPaciente;
-import vistaEjemplo.crud.ModificacionPaciente;
+import vistaMedico.AltaMedico;
+import vistaMedico.AtenderCita;
+import vistaMedico.BajaMedico;
+import vistaMedico.ConsultaMedico;
+import vistaOperacion.CierreOperacion;
+import vistaPaciente.AltaPaciente;
+import vistaPaciente.BajaPAciente;
+import vistaPaciente.ConsultaCitasPendientes;
+import vistaPaciente.ConsultaDatosPaciente;
+import vistaPaciente.HistorialPaciente;
+import vistaPaciente.ModificacionPaciente;
+import vistaPaciente.PedirCitaEspecialista;
+import vistaPaciente.PedirCitaPrimaria;
+import vistaPaciente.PedirOperacion;
 
-public class UI extends JFrame {
+public class UIGazpacho extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					UI frame = new UI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.
 	 */
-	public UI() {
+	public UIGazpacho() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1300, 800);
 
@@ -60,34 +45,35 @@ public class UI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new CardLayout(0, 0));
-		// Los paneles
-
-		AltaMedico altaMedico = new AltaMedico();
-		contentPane.add(altaMedico, "altaMedico");
+		// PANELES
 		AltaPaciente altaPaciente = new AltaPaciente();
 		contentPane.add(altaPaciente, "altaPaciente");
-		BajaPaciente bajaPaciente = new BajaPaciente();
+		BajaPAciente bajaPaciente = new BajaPAciente();
 		contentPane.add(bajaPaciente, "bajaPaciente");
-		ConsultaMedico consultaMedico = new ConsultaMedico();
-		contentPane.add(consultaMedico, "consultaMedico");
-		ConsultaPaciente consultaPaciente = new ConsultaPaciente();
-		contentPane.add(consultaPaciente, "consultaPaciente");
-		ModificacionPaciente modificacionPaciente = new ModificacionPaciente();
-		contentPane.add(modificacionPaciente, "modificacionPaciente");
-		CierreOperacion cierreOperacion = new CierreOperacion();
-		contentPane.add(cierreOperacion, "cierreOperacion");
-		CitaEspecialista citaEspecialista = new CitaEspecialista();
-		contentPane.add(citaEspecialista, "citaEspecialista");
-		Citaoperacion citaoperacion = new Citaoperacion();
-		contentPane.add(citaoperacion, "citaoperacion");
-		CitaPrimaria citaPrimaria = new CitaPrimaria();
-		contentPane.add(citaPrimaria, "citaPrimaria");
-		CitasPaciente citasPaciente = new CitasPaciente();
-		contentPane.add(citasPaciente, "citasPaciente");
+		ConsultaCitasPendientes consultaCitasPendientes = new ConsultaCitasPendientes();
+		contentPane.add(consultaCitasPendientes, "consultaCitasPendientes");
+		ConsultaDatosPaciente consultaDatosPacientes = new ConsultaDatosPaciente();
+		contentPane.add(consultaDatosPacientes, "consultaDatosPaciente");
 		HistorialPaciente historialPaciente = new HistorialPaciente();
 		contentPane.add(historialPaciente, "historialPaciente");
-		AtencionCita atenderCita = new AtencionCita();
-		contentPane.add(atenderCita, "atenderCita");
+		ModificacionPaciente modificacionPaciente = new ModificacionPaciente();
+		contentPane.add(modificacionPaciente, "modificacionPaciente");
+		PedirCitaEspecialista pedirCitaEspecialista = new PedirCitaEspecialista();
+		contentPane.add(pedirCitaEspecialista, "pedirCitaEspecialista");
+		PedirCitaPrimaria pedirCitaPrimaria = new PedirCitaPrimaria();
+		contentPane.add(pedirCitaPrimaria, "pedirCitaPrimaria");
+		PedirOperacion pedirOperacion = new PedirOperacion();
+		contentPane.add(pedirOperacion, "pedirOperacion");
+		CierreOperacion cierreOperacion = new CierreOperacion();
+		contentPane.add(cierreOperacion, "cierreOperacion");
+		AltaMedico altaMedico = new AltaMedico();
+		contentPane.add(altaMedico, "altaMedico");
+		AtenderCita atendercita = new AtenderCita();
+		contentPane.add(atendercita, "atenderCita");
+		BajaMedico bajaMedico = new BajaMedico();
+		contentPane.add(bajaMedico, "bajaMedico");
+		ConsultaMedico consultaDatosMedico = new ConsultaMedico();
+		contentPane.add(consultaDatosMedico, "consultaDatosMedico");
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -124,7 +110,7 @@ public class UI extends JFrame {
 		JMenuItem mntmConsulta = new JMenuItem("Consulta");
 		mntmConsulta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				asociarPanel("consultaPaciente");
+				asociarPanel("consultaDatosPaciente");
 			}
 		});
 		mnPaciente.add(mntmConsulta);
@@ -132,7 +118,7 @@ public class UI extends JFrame {
 		JMenuItem mntmPedirCitaPrimaria = new JMenuItem("Pedir Cita Primaria");
 		mntmPedirCitaPrimaria.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				asociarPanel("citaPrimaria");
+				asociarPanel("pedirCitaPrimaria");
 			}
 		});
 		mnPaciente.add(mntmPedirCitaPrimaria);
@@ -140,7 +126,7 @@ public class UI extends JFrame {
 		JMenuItem mntmPedirCitaEspecialista = new JMenuItem("Pedir Cita Especialista");
 		mntmPedirCitaEspecialista.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				asociarPanel("citaEspecialista");
+				asociarPanel("pedirCitaEspecialista");
 			}
 		});
 		mnPaciente.add(mntmPedirCitaEspecialista);
@@ -148,7 +134,7 @@ public class UI extends JFrame {
 		JMenuItem mntmPedirOperacion = new JMenuItem("Pedir Operacion");
 		mntmPedirOperacion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				asociarPanel("citaoperacion");
+				asociarPanel("pedirOperacion");
 			}
 		});
 		mnPaciente.add(mntmPedirOperacion);
@@ -156,7 +142,7 @@ public class UI extends JFrame {
 		JMenuItem mntmConsultarCitas = new JMenuItem("Consultar citas");
 		mntmConsultarCitas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				asociarPanel("citasPaciente");
+				asociarPanel("consultaCitasPendientes");
 			}
 		});
 		mnPaciente.add(mntmConsultarCitas);
@@ -179,12 +165,20 @@ public class UI extends JFrame {
 				asociarPanel("altaMedico");
 			}
 		});
-		mnMedico.add(mntmAlta_1);
+		mnMedico.add( mntmAlta_1);
+		
+		JMenuItem mntmBaja_1 = new JMenuItem("Baja");
+		mntmBaja_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				asociarPanel("bajaMedico");
+			}
+		});
+		mnMedico.add(mntmBaja_1);
 
 		JMenuItem mntmConsulta_1 = new JMenuItem("Consulta");
 		mntmConsulta_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				asociarPanel("consultaMedico");
+				asociarPanel("consultaDatosMedico");
 			}
 		});
 		mnMedico.add(mntmConsulta_1);
@@ -214,5 +208,4 @@ public class UI extends JFrame {
 	private void asociarPanel(String string) {
 		((CardLayout) contentPane.getLayout()).show(contentPane, string);
 	}
-
 }

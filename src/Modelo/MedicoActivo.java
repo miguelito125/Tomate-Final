@@ -1,6 +1,8 @@
 package Modelo;
 
-public class MedicoActivo extends Medico {
+import java.io.Serializable;
+
+public class MedicoActivo extends Medico implements Serializable{
 	private Consulta consulta;
 	private Horario horarioConsulta;
 	
