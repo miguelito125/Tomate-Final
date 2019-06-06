@@ -1,6 +1,8 @@
 package Modelo;
 
-public class Medico extends Persona {
+
+
+public class Medico extends Persona{
 	private Especialidades especialidad;
 
 	public Medico(String idPersona, String nombre, String direccion, String telefono, Especialidades especialidad) {
