@@ -5,28 +5,26 @@ import java.io.Serializable;
 import java.time.LocalTime;
 
 
-public class Cita implements Serializable{
+public class Cita implements Serializable {
 	private String idCita;
-	private String idPaciente;
-	private String idMedico;
+	private Paciente paciente;
+	private Medico medico;
 	private LocalTime hora;
 	private DiasDeLaSemana dia;
 	private boolean confirmacionDeAsistencia;
-	private String observaciones;
+	private String observaciones;	 
 	
-	public Cita(String idCita, String idPaciente, String idMedico, boolean confirmacionAsistencia, LocalTime fechaCita, DiasDeLaSemana dia) {
+	public Cita(String idCita, Paciente paciente, Medico medico, boolean confirmacionAsistencia, LocalTime fechaCita, DiasDeLaSemana dia) {
 		super();
 		this.idCita=idCita;
-		this.idPaciente=idPaciente;
-		this.idMedico=idMedico;
+		this.medico=medico;
+		this.paciente=paciente;
 		confirmacionAsistencia=true;
 		fechaCita= LocalTime.of(fechaCita.getHour(), 0);
 		this.dia=dia;
 	}
 
-	public String getIdMedico() {
-		return idMedico;
-	}
+	
 
 	public String getIdCita() {
 		return idCita;
@@ -48,13 +46,18 @@ public class Cita implements Serializable{
 		this.observaciones = observaciones;
 	}
 
-	public String getPaciente() {
-		return idPaciente;
+	
+	public Paciente getPaciente() {
+		return paciente;
 	}
 
-	public void setPaciente(String paciente) {
-		this.idPaciente = paciente;
+
+
+	public Medico getMedico() {
+		return medico;
 	}
+
+
 
 	public DiasDeLaSemana getDia() {
 		return dia;
