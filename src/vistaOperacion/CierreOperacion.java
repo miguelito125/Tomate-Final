@@ -2,6 +2,7 @@ package vistaOperacion;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.util.ArrayList;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -13,16 +14,18 @@ import panelComunes.Mensaje;
 import panelComunes.Tabla;
 
 public class CierreOperacion extends JPanel {
-
+	String [] titulosColumnas = {"Paciente","Operacion","Cirujano","Resultado"};
+	String [] campos = {"tuputamadre","minguito","espabilate","que stas por hacer desgraciao"};
+	
 	/**
 	 * Create the panel.
 	 */
 	public CierreOperacion() {
 		Mensaje mensaje = new Mensaje();
-		Tabla tabla = new Tabla();
+		Tabla tabla = new Tabla("Cierre operaciones", titulosColumnas );
+		tabla.agregarFila(campos);
 		
-		
-		JLabel lblNewLabel = new JLabel("Cierre Operaciones");
+		JLabel lblNewLabel = new JLabel("Cerrar Operaciones");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
 		

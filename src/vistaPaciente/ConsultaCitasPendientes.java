@@ -1,26 +1,30 @@
 package vistaPaciente;
 
-import javax.swing.JPanel;
+import java.awt.Font;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
-import java.awt.Font;
+import javax.swing.JPanel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+import panelComunes.Seleccion;
 import panelComunes.Tabla;
-
-import java.awt.BorderLayout;
+import javax.swing.JScrollPane;
 
 public class ConsultaCitasPendientes extends JPanel {
-
+	String [] titulosColumnas = {"Paciente","Tipo","Fecha","Medico"};
 	/**
 	 * Create the panel.
 	 */
 	public ConsultaCitasPendientes() {
-		Tabla tabla = new Tabla();
-		
+		Tabla tabla = new Tabla("Citas pendientes",titulosColumnas);
+		Seleccion seleccion = new Seleccion();
 		JLabel lblNewLabel = new JLabel("Citas Pendiente Paciente");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		
+		JScrollPane scrollPane = new JScrollPane();
+		
 		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
@@ -28,8 +32,13 @@ public class ConsultaCitasPendientes extends JPanel {
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(tabla, GroupLayout.PREFERRED_SIZE, 549, Short.MAX_VALUE)
-						.addComponent(lblNewLabel))
+						.addComponent(lblNewLabel)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(6)
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addComponent(tabla, GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
+								.addComponent(seleccion, GroupLayout.PREFERRED_SIZE, 545, GroupLayout.PREFERRED_SIZE))))
 					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
@@ -37,12 +46,19 @@ public class ConsultaCitasPendientes extends JPanel {
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblNewLabel)
-					.addGap(18)
-					.addComponent(tabla, GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
-					.addContainerGap())
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(seleccion, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(67)
+							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(243))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(tabla, GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+							.addContainerGap())))
 		);
 		setLayout(groupLayout);
 
 	}
-
 }
