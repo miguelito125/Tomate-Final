@@ -1,39 +1,49 @@
 package vistaPaciente;
 
-import javax.swing.JPanel;
+import java.awt.Font;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
-import java.awt.Font;
+import javax.swing.JPanel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+import panelComunes.Seleccion;
 import panelComunes.Tabla;
 
-import java.awt.BorderLayout;
-
 public class HistorialPaciente extends JPanel {
-
+	String [] titulosColumnas = {"Paciente","Tipo","Fecha","Medico"};
+	String [] titulosColumnas2 = {"Paciente","Medicamento","Posologia","Periodo"};
 	/**
 	 * Create the panel.
 	 */
 	public HistorialPaciente() {
 		
-		Tabla tabla = new Tabla();
-		Tabla tabla2 = new Tabla();
-		
+		Tabla tabla = new Tabla("Historial citas", titulosColumnas);
+		Tabla tabla2 = new Tabla("Tratamiento", titulosColumnas2);
+		Seleccion seleccion = new Seleccion();
 		JLabel lblNewLabel = new JLabel("Historial Paciente");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
 		
+		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(tabla, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
-						.addComponent(tabla2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
-						.addComponent(lblNewLabel, Alignment.LEADING))
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(tabla2, GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(lblNewLabel))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(seleccion, GroupLayout.PREFERRED_SIZE, 551, GroupLayout.PREFERRED_SIZE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(tabla, GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE)))
 					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
@@ -41,15 +51,16 @@ public class HistorialPaciente extends JPanel {
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblNewLabel)
-					.addGap(36)
-					.addComponent(tabla, GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-					.addGap(18)
-					.addComponent(tabla2, GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(seleccion, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(tabla, GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+					.addGap(13)
+					.addComponent(tabla2, GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
 					.addGap(19))
 		);
 		
 		setLayout(groupLayout);
 
 	}
-
 }

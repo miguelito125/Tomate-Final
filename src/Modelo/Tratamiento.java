@@ -6,16 +6,14 @@ public class Tratamiento {
 	private String idPaciente;
 	private Medicamentos medicacion;
 	private String dosis;
-	private Date fechaInicio;
-	private Date fechaFin;
+	private String periodo;
 	
-	public Tratamiento(String idPaciente, Medicamentos medicacion, String dosis, Date fechaInicio, Date fechaFin) {
+	public Tratamiento(String idPaciente, Medicamentos medicacion, String dosis, String periodo) {
 		super();
 		this.idPaciente=idPaciente;
 		this.medicacion=medicacion;
 		this.dosis=dosis;
-		this.fechaInicio=fechaInicio;
-		this.fechaFin=fechaFin;
+		this.periodo=periodo;
 	}
 
 	public String getIdPaciente() {
@@ -30,13 +28,10 @@ public class Tratamiento {
 		return dosis;
 	}
 
-	public Date getFechaInicio() {
-		return fechaInicio;
+	public String getPeriodo() {
+		return periodo;
 	}
 
-	public Date getFechaFin() {
-		return fechaFin;
-	}
 	
 	
 }
