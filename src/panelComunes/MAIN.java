@@ -11,7 +11,7 @@ public class MAIN extends JFrame {
 
 	private JPanel contentPane;
 	Seleccion select=new Seleccion();
-	Tabla tabla=new Tabla();
+	Tabla tabla=new Tabla("lo que yo quiera");
 	Identificacion identi = new Identificacion();
 	
 	/**

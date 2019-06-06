@@ -27,6 +27,8 @@ import vistaPaciente.ModificacionPaciente;
 import vistaPaciente.PedirCitaEspecialista;
 import vistaPaciente.PedirCitaPrimaria;
 import vistaPaciente.PedirOperacion;
+import javax.swing.BoxLayout;
+import javax.swing.JSpinner;
 
 public class UIGazpacho extends JFrame {
 
@@ -202,6 +204,13 @@ public class UIGazpacho extends JFrame {
 			}
 		});
 		mnOperacion.add(mntmCerrarOperacion);
+		
+		JPanel panel = new JPanel();
+		menuBar.add(panel);
+		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+		
+		JSpinner spinner = new JSpinner();
+		panel.add(spinner);
 
 	}
 
