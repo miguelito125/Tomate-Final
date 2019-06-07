@@ -3,6 +3,8 @@ package panelComunes;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -12,6 +14,8 @@ import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -19,16 +23,10 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 public class Tabla extends JPanel {
 	JScrollPane scrollPane;
 	private JTable table;
-	String cadena[]=new String[1];
-	String nombresColumnas[]=null;
-	ArrayList<String[]> filas=new ArrayList<>();
-	String data2[][];
-	String data[][]= new String[1][1];
 	/**
 	 * Create the frame.
 	 */
-	public Tabla(String titulo, String[] titulosColumnas) {
-		nombresColumnas= titulosColumnas;
+	public Tabla(String titulo, String[] titulosColumnas,String[][]data,String observaciones[]) {
 		JLabel lblTitulo = new JLabel(titulo);
 		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		
@@ -58,33 +56,27 @@ public class Tabla extends JPanel {
 		);
 		
 
-//		data=filas.toArray(data);
-		data2=filas.toArray(data.clone());
-		data=data2;
 		
-//		for (int i = 0; i < data.length; i++) {
-//			for (int j = 0; j < data[i].length; j++) {
-//				System.out.println(data[i][j]);
-//			}
-//		}
 		table = new JTable();
 		Font font = new Font("Tahoma", Font.PLAIN, 16);
 		table.setFont(font);
 		table.getTableHeader().setFont(font);
-		DefaultTableModel defaultTableModel = new DefaultTableModel(data,nombresColumnas);
+		DefaultTableModel defaultTableModel = new DefaultTableModel(data,titulosColumnas);
 		table.setModel(defaultTableModel);
 		scrollPane.setViewportView(table);
 		setLayout(groupLayout);
-		
-		
-	}
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JTable table=((JTable)e.getSource());
+				int selectedRow = table.getSelectedRow();
+				new Dialogo(observaciones[selectedRow]);
+			}
+		});
 	
-	public void agregarFila(String[] datos) {
-		filas.add(datos);
-		data2=filas.toArray(data.clone());
-		data=data2;
 		
 	}
+
 	public Tabla getContentPane() {
 		return this;
 	}
