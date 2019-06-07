@@ -1,9 +1,10 @@
 package Modelo;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class CirujanoActivo extends Medico{
+public class CirujanoActivo extends Medico implements Serializable{
 	private LinkedList <Intervencion> intervenciones;
 	
 	public CirujanoActivo(String idPersona, String nombre, String direccion, String telefono,
