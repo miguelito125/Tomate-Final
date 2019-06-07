@@ -1,8 +1,8 @@
 package Modelo;
 
+import java.io.Serializable;
 
-
-public class Medico extends Persona{
+public class Medico extends Persona implements Serializable{
 	private Especialidades especialidad;
 
 	public Medico(String idPersona, String nombre, String direccion, String telefono, Especialidades especialidad) {
