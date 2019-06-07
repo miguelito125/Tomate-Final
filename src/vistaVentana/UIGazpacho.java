@@ -13,6 +13,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import panelComunes.Mensaje;
 import vistaMedico.AltaMedico;
 import vistaMedico.AtenderCita;
 import vistaMedico.BajaMedico;
@@ -29,11 +30,19 @@ import vistaPaciente.PedirCitaPrimaria;
 import vistaPaciente.PedirOperacion;
 import javax.swing.BoxLayout;
 import javax.swing.JSpinner;
+import javax.swing.JLabel;
+import java.awt.Dimension;
+import javax.swing.JButton;
+import java.awt.Component;
 
 public class UIGazpacho extends JFrame {
 
-	private JPanel contentPane;
-
+	protected JPanel contentPane;
+	protected JButton btnPasarTiempo;
+	protected JSpinner spnPasarHora;
+	protected JSpinner spnPasarDía;
+	protected JMenuBar menu;
+	private AltaPaciente altaPaciente;
 	
 
 	/**
@@ -48,7 +57,8 @@ public class UIGazpacho extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new CardLayout(0, 0));
 		// PANELES
-		AltaPaciente altaPaciente = new AltaPaciente();
+		altaPaciente = new AltaPaciente();
+		altaPaciente.setMaximumSize(new Dimension(3000, 32767));
 		contentPane.add(altaPaciente, "altaPaciente");
 		BajaPAciente bajaPaciente = new BajaPAciente();
 		contentPane.add(bajaPaciente, "bajaPaciente");
@@ -77,12 +87,12 @@ public class UIGazpacho extends JFrame {
 		ConsultaMedico consultaDatosMedico = new ConsultaMedico();
 		contentPane.add(consultaDatosMedico, "consultaDatosMedico");
 
-		JMenuBar menuBar = new JMenuBar();
-		setJMenuBar(menuBar);
+		menu = new JMenuBar();
+		setJMenuBar(menu);
 
 		JMenu mnPaciente = new JMenu("Paciente");
 		mnPaciente.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		menuBar.add(mnPaciente);
+		menu.add(mnPaciente);
 
 		JMenuItem mntmAlta = new JMenuItem("Alta");
 		mntmAlta.addActionListener(new ActionListener() {
@@ -159,7 +169,7 @@ public class UIGazpacho extends JFrame {
 
 		JMenu mnMedico = new JMenu("Medico");
 		mnMedico.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		menuBar.add(mnMedico);
+		menu.add(mnMedico);
 
 		JMenuItem mntmAlta_1 = new JMenuItem("Alta");
 		mntmAlta_1.addActionListener(new ActionListener() {
@@ -195,7 +205,7 @@ public class UIGazpacho extends JFrame {
 
 		JMenu mnOperacion = new JMenu("Operacion");
 		mnOperacion.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		menuBar.add(mnOperacion);
+		menu.add(mnOperacion);
 
 		JMenuItem mntmCerrarOperacion = new JMenuItem("Cerrar Operacion");
 		mntmCerrarOperacion.addActionListener(new ActionListener() {
@@ -206,13 +216,35 @@ public class UIGazpacho extends JFrame {
 		mnOperacion.add(mntmCerrarOperacion);
 		
 		JPanel panel = new JPanel();
-		menuBar.add(panel);
+		menu.add(panel);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 		
-		JSpinner spinner = new JSpinner();
-		panel.add(spinner);
+		spnPasarHora = new JSpinner();
+		spnPasarHora.setMaximumSize(new Dimension(100, 32767));
+		spnPasarHora.setMinimumSize(new Dimension(17, 20));
+		panel.add(spnPasarHora);
+		
+		JLabel lblPasarHora = new JLabel("Pasar Hora");
+		panel.add(lblPasarHora);
+		
+		spnPasarDía = new JSpinner();
+		spnPasarDía.setMaximumSize(new Dimension(100, 32767));
+		panel.add(spnPasarDía);
+		
+		JLabel lblPasarDa = new JLabel("Pasar d\u00EDa");
+		panel.add(lblPasarDa);
+		
+		btnPasarTiempo = new JButton("Aplicar");
+		
+		menu.add(btnPasarTiempo);
 
 	}
+	
+
+	public AltaPaciente getAltaPaciente() {
+		return altaPaciente;
+	}
+
 
 	private void asociarPanel(String string) {
 		((CardLayout) contentPane.getLayout()).show(contentPane, string);
