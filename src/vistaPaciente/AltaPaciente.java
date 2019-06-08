@@ -3,6 +3,7 @@ package vistaPaciente;
 import javax.swing.JPanel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.BorderLayout;
@@ -12,13 +13,14 @@ import panelComunes.Identificacion;
 import panelComunes.Mensaje;
 
 public class AltaPaciente extends JPanel {
-
+	
+	Mensaje mensaje;
 	/**
 	 * Create the panel.
 	 */
 	public AltaPaciente() {
 		Identificacion identificacion = new Identificacion();
-		Mensaje mensaje = new Mensaje();
+		 mensaje = new Mensaje();
 		JLabel lblAltaPaciente = new JLabel("Alta Paciente");
 		lblAltaPaciente.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		
@@ -55,4 +57,8 @@ public class AltaPaciente extends JPanel {
 	
 		this.setLayout(groupLayout);
 	}
+	public JButton getBtnMensaje(){
+		return mensaje.getBtnAplicar();
+	}
+	
 }
