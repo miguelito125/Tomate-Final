@@ -1,9 +1,10 @@
 package Modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Stack;
 
-public class Paciente extends Persona{
+public class Paciente extends Persona implements Serializable{
 	private Date fechaNacimiento; //hay que cambiar el tipo de dato
 	private Stack<Cita> citasPendientes;
 	
