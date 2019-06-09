@@ -43,7 +43,17 @@ public class UIGazpacho extends JFrame {
 	protected JSpinner spnPasarDía;
 	protected JMenuBar menu;
 	private AltaPaciente altaPaciente;
-	
+	private BajaPaciente bajaPaciente;
+	private ConsultaDatosPaciente consultaDatosPacientes;
+	private ModificacionPaciente modificacionPaciente;
+	private PedirCitaEspecialista pedirCitaEspecialista;
+	private PedirCitaPrimaria pedirCitaPrimaria;
+	private PedirOperacion pedirOperacion;
+	private CierreOperacion cierreOperacion;
+	private AltaMedico altaMedico;
+	private AtenderCita atendercita;
+	private BajaMedico bajaMedico;
+	private ConsultaMedico consultaDatosMedico;
 
 	/**
 	 * Create the frame.
@@ -60,31 +70,31 @@ public class UIGazpacho extends JFrame {
 		altaPaciente = new AltaPaciente();
 		altaPaciente.setMaximumSize(new Dimension(3000, 32767));
 		contentPane.add(altaPaciente, "altaPaciente");
-		BajaPaciente bajaPaciente = new BajaPaciente();
+		bajaPaciente = new BajaPaciente();
 		contentPane.add(bajaPaciente, "bajaPaciente");
 		ConsultaCitasPendientes consultaCitasPendientes = new ConsultaCitasPendientes();
 		contentPane.add(consultaCitasPendientes, "consultaCitasPendientes");
-		ConsultaDatosPaciente consultaDatosPacientes = new ConsultaDatosPaciente();
+		consultaDatosPacientes = new ConsultaDatosPaciente();
 		contentPane.add(consultaDatosPacientes, "consultaDatosPaciente");
 		HistorialPaciente historialPaciente = new HistorialPaciente();
 		contentPane.add(historialPaciente, "historialPaciente");
-		ModificacionPaciente modificacionPaciente = new ModificacionPaciente();
+		modificacionPaciente = new ModificacionPaciente();
 		contentPane.add(modificacionPaciente, "modificacionPaciente");
-		PedirCitaEspecialista pedirCitaEspecialista = new PedirCitaEspecialista();
+		pedirCitaEspecialista = new PedirCitaEspecialista();
 		contentPane.add(pedirCitaEspecialista, "pedirCitaEspecialista");
-		PedirCitaPrimaria pedirCitaPrimaria = new PedirCitaPrimaria();
+		pedirCitaPrimaria = new PedirCitaPrimaria();
 		contentPane.add(pedirCitaPrimaria, "pedirCitaPrimaria");
-		PedirOperacion pedirOperacion = new PedirOperacion();
+		pedirOperacion = new PedirOperacion();
 		contentPane.add(pedirOperacion, "pedirOperacion");
-		CierreOperacion cierreOperacion = new CierreOperacion();
+		cierreOperacion = new CierreOperacion();
 		contentPane.add(cierreOperacion, "cierreOperacion");
-		AltaMedico altaMedico = new AltaMedico();
+		altaMedico = new AltaMedico();
 		contentPane.add(altaMedico, "altaMedico");
-		AtenderCita atendercita = new AtenderCita();
+		atendercita = new AtenderCita();
 		contentPane.add(atendercita, "atenderCita");
-		BajaMedico bajaMedico = new BajaMedico();
+		bajaMedico = new BajaMedico();
 		contentPane.add(bajaMedico, "bajaMedico");
-		ConsultaMedico consultaDatosMedico = new ConsultaMedico();
+		consultaDatosMedico = new ConsultaMedico();
 		contentPane.add(consultaDatosMedico, "consultaDatosMedico");
 
 		menu = new JMenuBar();
@@ -177,8 +187,8 @@ public class UIGazpacho extends JFrame {
 				asociarPanel("altaMedico");
 			}
 		});
-		mnMedico.add( mntmAlta_1);
-		
+		mnMedico.add(mntmAlta_1);
+
 		JMenuItem mntmBaja_1 = new JMenuItem("Baja");
 		mntmBaja_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -214,37 +224,79 @@ public class UIGazpacho extends JFrame {
 			}
 		});
 		mnOperacion.add(mntmCerrarOperacion);
-		
+
 		JPanel panel = new JPanel();
 		menu.add(panel);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
-		
+
 		spnPasarHora = new JSpinner();
 		spnPasarHora.setMaximumSize(new Dimension(100, 32767));
 		spnPasarHora.setMinimumSize(new Dimension(17, 20));
 		panel.add(spnPasarHora);
-		
+
 		JLabel lblPasarHora = new JLabel("Pasar Hora");
 		panel.add(lblPasarHora);
-		
+
 		spnPasarDía = new JSpinner();
 		spnPasarDía.setMaximumSize(new Dimension(100, 32767));
 		panel.add(spnPasarDía);
-		
+
 		JLabel lblPasarDa = new JLabel("Pasar d\u00EDa");
 		panel.add(lblPasarDa);
-		
+
 		btnPasarTiempo = new JButton("Aplicar");
-		
+
 		menu.add(btnPasarTiempo);
 
 	}
-	
 
 	public AltaPaciente getAltaPaciente() {
 		return altaPaciente;
 	}
 
+	public BajaPaciente getBajaPaciente() {
+		return bajaPaciente;
+	}
+
+	public ConsultaDatosPaciente getConsultaDatosPacientes() {
+		return consultaDatosPacientes;
+	}
+
+	public ModificacionPaciente getModificacionPaciente() {
+		return modificacionPaciente;
+	}
+
+	public PedirCitaEspecialista getPedirCitaEspecialista() {
+		return pedirCitaEspecialista;
+	}
+
+	public PedirCitaPrimaria getPedirCitaPrimaria() {
+		return pedirCitaPrimaria;
+	}
+
+	public PedirOperacion getPedirOperacion() {
+		return pedirOperacion;
+	}
+
+	public CierreOperacion getCierreOperacion() {
+		return cierreOperacion;
+	}
+
+	public AltaMedico getAltaMedico() {
+		return altaMedico;
+	}
+
+	public AtenderCita getAtenderCita() {
+		return atendercita;
+	}
+
+	public BajaMedico getBajaMedico() {
+		return bajaMedico;
+	}
+
+	public ConsultaMedico getConsultaDatosMedico() {
+		return consultaDatosMedico;
+	}
 
 	private void asociarPanel(String string) {
 		((CardLayout) contentPane.getLayout()).show(contentPane, string);
