@@ -12,11 +12,15 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Mensaje extends JPanel {
 
 	private JTextField textField;
+	private JButton btnAplicar;
 
+	
 	public Mensaje() {
 		setBounds(100, 100, 450, 300);
 		
@@ -25,7 +29,9 @@ public class Mensaje extends JPanel {
 		textField = new JTextField();
 		textField.setColumns(10);
 		
-		JButton btnAplicar = new JButton("Aplicar");
+		btnAplicar = new JButton("Aplicar");
+		
+		
 		GroupLayout gl_contentPane = new GroupLayout(this);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -49,5 +55,14 @@ public class Mensaje extends JPanel {
 	}
 	public JPanel getContentPane() {
 		return this;
+	}
+	public JTextField getTextField() {
+		return textField;
+	}
+	public void setTextField(JTextField textField) {
+		this.textField = textField;
+	}
+	public JButton getBtnAplicar() {
+		return btnAplicar;
 	}
 }
