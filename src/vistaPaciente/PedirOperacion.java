@@ -108,4 +108,5 @@ public class PedirOperacion extends JPanel {
 		return mensaje.getTextField().getText();
 	}
 
+
 }

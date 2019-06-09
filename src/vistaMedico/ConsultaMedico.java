@@ -125,5 +125,4 @@ public class ConsultaMedico extends JPanel {
 	public void setAltaHorario(JTextField altaHorario) {
 		this.altaHorario = altaHorario;
 	}
-
 }

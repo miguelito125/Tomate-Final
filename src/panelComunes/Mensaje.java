@@ -21,7 +21,6 @@ public class Mensaje extends JPanel {
 	private JButton btnAplicar;
 
 	
-	
 	public Mensaje() {
 		setBounds(100, 100, 450, 300);
 		

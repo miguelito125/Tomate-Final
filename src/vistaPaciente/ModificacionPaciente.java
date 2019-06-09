@@ -92,6 +92,7 @@ public class ModificacionPaciente extends JPanel {
 
 	public String getTextField() {
 		return mensaje.getTextField().getText();
+
 	}
 
 }

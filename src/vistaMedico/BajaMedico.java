@@ -165,4 +165,5 @@ public class BajaMedico extends JPanel {
 		this.txtEspecialidad = txtEspecialidad;
 	}
 
+
 }

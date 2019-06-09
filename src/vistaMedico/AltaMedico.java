@@ -161,5 +161,5 @@ public class AltaMedico extends JPanel {
 	public void setAltaHorario(JTextField altaHorario) {
 		this.altaHorario = altaHorario;
 	}
-	
+
 }
