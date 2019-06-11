@@ -108,7 +108,7 @@ public class ParaUI extends UIGazpacho {
 		assert getAtenderCita().getCitaPaciente() != null
 				&& Validadores.validar(Regulares.comunLetras, getAtenderCita().getCitaPaciente().toString());
 		assert getAtenderCita().getCitaPeriodo() != null
-				&& Validadores.validar(Regulares.hora, getAtenderCita().getCitaPeriodo().toString());
+				&& Validadores.validar(Regulares.comunNumero, getAtenderCita().getCitaPeriodo().toString());
 		assert getAtenderCita().getTextField() != null
 				&& Validadores.validar(Regulares.comunLetras, getAtenderCita().getTextField());
 		
